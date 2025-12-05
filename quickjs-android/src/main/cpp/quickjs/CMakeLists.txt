@@ -20,6 +20,18 @@ add_library(
         SHARED
         ${SOURCE_DIR}
 )
+
+# ----------------------------------------------------
+# ✨ 关键修改：添加链接器标志以强制 16KB 页面对齐 ✨
+# CMake 3.13之前版本不需要加 PRIVATE 标识，之后需要使用 PRIVATE 标识
+# 16384
+# ----------------------------------------------------
+target_link_libraries(
+        ${PROJECT_NAME}
+        PUBLIC
+        "-Wl,--emit-relocs"
+        "-Wl,-z,max-page-size=16384"
+)
 target_include_directories(${PROJECT_NAME} PUBLIC .)
 
 
