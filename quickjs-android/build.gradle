@@ -33,9 +33,11 @@ android {
     externalNativeBuild {
         cmake {
             path file('src/main/cpp/CMakeLists.txt')
-            version '3.10.2'
+            version '4.1.0'
         }
     }
+
+    ndkVersion '28.2.13676358'
 }
 
 dependencies {
@@ -44,4 +46,4 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
-apply from: '../maven_public.gradle'
+//apply from: '../maven_public.gradle'
