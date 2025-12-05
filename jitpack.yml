@@ -1,0 +1,7 @@
+# jitpack.yml
+jdk:
+  - openjdk11
+
+# 告诉 JitPack 只需要构建这个子模块
+install:
+  - FILE="-Dfile.encoding=UTF-8" ./gradlew :quickjs-android:publishToMavenLocal $FILE
